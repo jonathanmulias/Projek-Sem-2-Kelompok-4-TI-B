@@ -3,7 +3,6 @@ from game import mulai_game
 from leaderboard import leaderboard
 
 def menu_utama():
-
     while True:
         print("\n=================================")
         print("      GAME SUIT BALAP KARTU      ")
