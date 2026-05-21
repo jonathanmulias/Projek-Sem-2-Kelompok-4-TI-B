@@ -1,3 +1,5 @@
+from history import cari_skor
+
 def skor(gmail_login):
     with open("penyimpanan.txt", "r") as f:
         data = f.readlines()
@@ -68,6 +70,19 @@ def leaderboard():
 
     print("\n===== LEADERBOARD =====")
     ranking = 1
+
     for pemain in data_pemain:
         print(f"{ranking}. {pemain[0]} - {pemain[1]} kemenangan")
         ranking += 1
+
+    print("\n1. Cari skor berdasarkan nama")
+    print("2. Kembali")
+
+    pilihan = input("\nMasukkan pilihan : ")
+
+    if pilihan == "1":
+        cari_skor()
+    elif pilihan == "2":
+        return
+    else:
+        print("Pilihan tidak tersedia!")
