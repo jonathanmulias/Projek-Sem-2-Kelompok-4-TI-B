@@ -1,3 +1,5 @@
+from history import cari_skor
+
 def skor(gmail_login):
     with open("penyimpanan.txt", "r") as f:
         data = f.readlines()
@@ -42,6 +44,7 @@ def leaderboard():
     try:
         with open("penyimpanan.txt", "r") as f:
             data = f.readlines()
+
     except FileNotFoundError:
         print("\nBelum ada data!")
         return
@@ -54,11 +57,17 @@ def leaderboard():
             gmail = data[i].split(":")[1].strip()
             nama = gmail.split("@")[0]
             skor = 0
+
+            #CEK APAKAH ADA SKOR
             if i + 2 < len(data) and "Skor :" in data[i + 2]:
                 skor = int(data[i + 2].split(":")[1])
+
+            #SIMPAN KE LIST
             data_pemain.append([nama, skor])
+
         i += 1
 
+    #PENGURUTAN MENGGUNKAN BUBBLE SORT
     for i in range(len(data_pemain)):
         for j in range(len(data_pemain) - 1 - i):
             if data_pemain[j][1] < data_pemain[j + 1][1]:
@@ -68,6 +77,20 @@ def leaderboard():
 
     print("\n===== LEADERBOARD =====")
     ranking = 1
+
     for pemain in data_pemain:
         print(f"{ranking}. {pemain[0]} - {pemain[1]} kemenangan")
         ranking += 1
+
+    while True:
+        print("\n1. Cari skor berdasarkan nama")
+        print("2. Kembali")
+
+        pilihan = input("\nMasukkan pilihan : ")
+
+        if pilihan == "1":
+            cari_skor()
+        elif pilihan == "2":
+            return
+        else:
+            print("Pilihan tidak tersedia!")
