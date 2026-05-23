@@ -3,8 +3,8 @@ from game import mulai_game
 from leaderboard import leaderboard
 
 def menu_utama():
-
-    while True:
+    game_berjalan = True
+    while game_berjalan:
         print("\n=================================")
         print("      GAME SUIT BALAP KARTU      ")
         print("=================================")
@@ -24,8 +24,12 @@ def menu_utama():
             leaderboard()
 
         elif pilihan == 3:
-            print("\nTerima kasih sudah bermain!")
-            break
+            keluar = input("Anda ingin keluar dari permainan (y/t) : ")
+            if keluar == "y":
+                game_berjalan = False
+                exit()
+            elif keluar == "t":
+                continue
 
         else:
             print("\nPilihan tidak tersedia!")
