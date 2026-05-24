@@ -1,0 +1,15 @@
+Gmail : najwa@gmail.com
+Password : 123
+Skor : 8
+Gmail : jonathan@gmail.com
+Password : 123
+Skor : 5
+Gmail : asyifa@gmail.com
+Password : 123
+Skor : 7
+Gmail : jonathan@gmail.com
+Password : 12345
+Skor : 1
+Gmail : ray@gmail.com
+Password : 12345
+Skor : 1
